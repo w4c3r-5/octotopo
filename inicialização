@@ -6,18 +6,20 @@ import discord
 
 class MyClient(discord.Client):
     async def on_ready(self):
-        print('Logged in as')
+        print('Conectado como:')
         print(self.user.name)
         print(self.user.id)
         print('------')
 
     async def on_message(self, message):
-        # we do not want the bot to reply to itself
         if message.author.id == self.user.id:
             return
 
         if message.content.startswith('!opa'):
-            await message.channel.send('E aí, {0.author.mention}'.format(message))
+            await message.channel.send('''
+            E aí, {0.author.mention}! Está 
+            precisando de algo? Para falar 
+            comigo basta usar o prefixo "!"'''.format(message))
 
     async def on_member_join(self, member):
         guild = member.guild
@@ -26,4 +28,4 @@ class MyClient(discord.Client):
             await guild.system_channel.send(to_send)
 
 client = MyClient()
-client.run('NjY0NTIxMDQxMDYxODcxNjQ5.XhiA2A.6XKCYA1ppUU3madT_kyoGllRtok')
+client.run('NjY0NTIxMDQxMDYxODcxNjQ5.XiNBww.hGy0Kj12N9sSg13_HsGWKW-38-o')

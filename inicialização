@@ -28,4 +28,4 @@ class MyClient(discord.Client):
             await guild.system_channel.send(to_send)
 
 client = MyClient()
-client.run('NjY0NTIxMDQxMDYxODcxNjQ5.XiNCfw.no57FFr6eE_XIOD4ThPtbXwlnC4')
+client.run('NjY0NTIxMDQxMDYxODcxNjQ5.XiNDaw.OxogM8-tvryp6REjO28IGI8twbc')
